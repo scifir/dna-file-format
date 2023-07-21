@@ -68,3 +68,28 @@ The DNA file format has been created by [Ismael Correa Castro](https://github.co
 ### Funding
 
 The **Scifir Foundation** is looking for **funding**, in order to do some digital marketing and pay some other needs of his projects. If you want to support his technologies, and **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/Iarfen).
+
+## Tags
+
+**dnal** and **dnac** files have the following tags:
+
+| Tag | Description
+| -------- | ----------------------------|
+| <dna> | Top-level tag to represent dna |
+| <chromosome> | Adds a chromosome |
+| <mtdna> | Adds a mitochondrial DNA |
+| <cpdna> | Adds a chloroplasts DNA |
+| <gene> | Adds a gene sequence |
+| <non_coding> | Adds a non-coding sequence |
+
+**info.xml** files have the following tags:
+
+| Tag | Description
+| -------- | ----------------------------|
+| <info> | Top-level tag to represent metadata of a DNA |
+| <name> | Optional. Name of the life form |
+| <species> | Name of the species the life form is |
+| <authors> | Name of each of the authors of the DNA sequencing and/or edition |
+| <date> | Date of creation of the file |
+| <description> | Any relevant description of the life form |
+| <organization> | Organization the authors were working for |
