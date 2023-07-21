@@ -75,21 +75,21 @@ The **Scifir Foundation** is looking for **funding**, in order to do some digita
 
 | Tag | Description
 | -------- | ----------------------------|
-| <dna> | Top-level tag to represent dna |
-| <chromosome> | Adds a chromosome |
-| <mtdna> | Adds a mitochondrial DNA |
-| <cpdna> | Adds a chloroplasts DNA |
-| <gene> | Adds a gene sequence |
-| <non_coding> | Adds a non-coding sequence |
+| \<dna\> | Top-level tag to represent dna |
+| \<chromosome\> | Adds a chromosome |
+| \<mtdna\> | Adds a mitochondrial DNA |
+| \<cpdna\> | Adds a chloroplasts DNA |
+| \<gene\> | Adds a gene sequence |
+| \<non_coding\> | Adds a non-coding sequence |
 
 **info.xml** files have the following tags:
 
 | Tag | Description
 | -------- | ----------------------------|
-| <info> | Top-level tag to represent metadata of a DNA |
-| <name> | Optional. Name of the life form |
-| <species> | Name of the species the life form is |
-| <authors> | Name of each of the authors of the DNA sequencing and/or edition |
-| <date> | Date of creation of the file |
-| <description> | Any relevant description of the life form |
-| <organization> | Organization the authors were working for |
+| \<info\> | Top-level tag to represent metadata of a DNA |
+| \<name\> | Optional. Name of the life form |
+| \<species\> | Name of the species the life form is |
+| \<authors\> | Name of each of the authors of the DNA sequencing and/or edition |
+| \<date\> | Date of creation of the file |
+| \<description\> | Any relevant description of the life form |
+| \<organization\> | Organization the authors were working for |
