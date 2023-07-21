@@ -10,6 +10,14 @@ A **dna file** is an **archive file** containing the following files:
 - **sequence.sha256** file: It's a checksum that forbids to falsify the sequence.dnal or the sequence.dnac file.
 - **info.sha256**: It's a checksum that forbids to falsify the info.xml file.
 
+### Advantages
+- **Very light:** Compared to other DNA file formats it's by far lighter. Each dna file using a dnal file sizes MB rather than GB. The dna files using dnac file size GB as usual.
+- **Very structured:** It allows to change one gene or another by knowing each change made, rather than editing a large DNA sequence. Additional to changing genes, it's easy to add chromosomes.
+- **Artificial nitrogenous bases:** Artificial nitrogenous bases can be added, in order to support **artificial DNAs**. An artificial DNA is a concept defined in Scifir to refer to DNA created artificially with extended characteristics related to natural DNA, it's not considered an artificial DNA a natural DNA modified artificially by any means (inside a computer or in the laboratory with injections), only a DNA is an artificial DNA if it has new nitrogenous bases not present on the natural world.
+- **Extraterrestrial nitrogenous bases:** Extraterrestrial nitrogenous bases can be added to support any extraterrestrial life form present in the universe, which possibly will be found in a not so distant future.
+- **Metadata:** The name of the life form, the name of the species, the authors, the organization, among other metadata, can all be added here.
+
+### Example files
 An example of a **dnal file**, the most commonly used between the dnal and the dnac file, is the following:
 
 ```xml
