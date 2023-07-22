@@ -69,27 +69,59 @@ The DNA file format has been created by [Ismael Correa Castro](https://github.co
 
 The **Scifir Foundation** is looking for **funding**, in order to do some digital marketing and pay some other needs of his projects. If you want to support his technologies, and **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/Iarfen).
 
-## Tags
+## XML elements
 
-**dnal** and **dnac** files have the following tags:
+**dnal** and **dnac** files have the following elements:
 
-| Tag | Description
-| -------- | ----------------------------|
-| \<dna\> | Top-level tag to represent dna |
-| \<chromosome\> | Adds a chromosome |
-| \<mtdna\> | Adds a mitochondrial DNA |
-| \<cpdna\> | Adds a chloroplasts DNA |
-| \<gene\> | Adds a gene sequence |
-| \<non_coding\> | Adds a non-coding sequence |
+| XML element | Use | Description
+| -------- | ---------| ----------------------------|
+| \<dna\> | Required, top level | Top-level element to represent dna |
+| \<chromosome\> | Required, any number | Adds a chromosome |
+| \<mtdna\> | Optional | Adds a mitochondrial DNA |
+| \<cpdna\> | Optional | Adds a chloroplasts DNA |
+| \<gene\> | Required, any number | Adds a gene sequence |
+| \<non_coding\> | Required, any number | Adds a non-coding sequence |
 
-**info.xml** files have the following tags:
+**info.xml** files have the following elements:
 
-| Tag | Description
-| -------- | ----------------------------|
-| \<info\> | Top-level tag to represent metadata of a DNA |
-| \<name\> | Optional. Name of the life form |
-| \<species\> | Name of the species the life form is |
-| \<authors\> | Name of each of the authors of the DNA sequencing and/or edition |
-| \<date\> | Date of creation of the file |
-| \<description\> | Any relevant description of the life form |
-| \<organization\> | Organization the authors were working for |
+| XML element | Use | Description
+| -------- | ---------|  ----------------------------|
+| \<info\> | Required, top level| Top level element to represent metadata of a DNA |
+| \<name\> | Optional | Name of the life form |
+| \<species\> | Optional | Name of the species the life form is |
+| \<authors\> | Required | Name of each of the authors of the DNA sequencing and/or edition |
+| \<date\> | Required | Date of creation of the file |
+| \<description\> | Optional | Any relevant description of the life form |
+| \<organization\> | Required | Organization the authors were working for |
+
+### <dna>
+
+The **<dna> element** is the top-level element of **dnal** and **dnac files**. It contains all the other elements.
+
+### <chromosome>
+
+The **<chromosome> element** represents a **chromosome**. It contains <gene> and <non_coding> elements in any number.
+
+It has the following attribute:
+
+| Attribute | Required | Description
+| -------- | --------- | ----------------------------|
+| name | Name of the chromosome to identify it from others |
+
+### <mtdna>
+
+The **<mtdna> element** represents a **mitochondrial DNA**. As <chromosome>, it contains <gene> and <non_coding> elements in any number. There can only be one in a DNA file, and can be optionally present, because for dna files of plants there doesn't exist the mitochondrial DNA.
+
+### <cpdna>
+
+The **<cpdna> element** represents a **chloroplast DNA**. It's similar to the <mtdna> element, and contains <gene> and <non_coding> elements in any number. It can be optionally present, because for dna files of animals there doesn't exist chloroplasts.
+
+### <gene>
+
+The **<gene> element** represents a **gene**. It contains the sequence of nitrogenous bases of which the gene is composed of. The nitrogenous bases are specified in lower case letters if they are not methylated, and they are specified in upper case letters if they are methylated. It's very important to use lower case letters or upper case letters appropiately, because the methylation of nitrogenous bases can seriously change the behavior of part of the DNA.
+
+Given the fact that, coming from the theory of codons, genes should always start with AUG, any <gene> element that doesn't starts with that sequence should be wrong. In order to support any possible biological case, to start with AUG is not expressly supported.
+
+### <non_coding>
+
+The **<non_coding> element** represents a **non-coding region of the DNA**. It usually comprises the majority of nitrogenous bases in any DNA file, because the DNA of life forms usually contains a majority of non-coding regions. It's usually edited in small portions, specifically, in the portions of the transcription factors, to change the level of expression of some specific gene, which usually is the gene that comes next (if the region of the transcription factor is near the end of the non-coding region), or the gene that was previously (if the region of the transcription factor is near the start of the non-coding region).
