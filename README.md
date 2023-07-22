@@ -94,11 +94,11 @@ The **Scifir Foundation** is looking for **funding**, in order to do some digita
 | \<description\> | Optional | Any relevant description of the life form |
 | \<organization\> | Required | Organization the authors were working for |
 
-### <dna>
+### \<dna\>
 
 The **<dna> element** is the top-level element of **dnal** and **dnac files**. It contains all the other elements.
 
-### <chromosome>
+### \<chromosome\>
 
 The **<chromosome> element** represents a **chromosome**. It contains <gene> and <non_coding> elements in any number.
 
@@ -108,20 +108,20 @@ It has the following attribute:
 | -------- | --------- | ----------------------------|
 | name | Name of the chromosome to identify it from others |
 
-### <mtdna>
+### \<mtdna\>
 
 The **<mtdna> element** represents a **mitochondrial DNA**. As <chromosome>, it contains <gene> and <non_coding> elements in any number. There can only be one in a DNA file, and can be optionally present, because for dna files of plants there doesn't exist the mitochondrial DNA.
 
-### <cpdna>
+### \<cpdna\>
 
 The **<cpdna> element** represents a **chloroplast DNA**. It's similar to the <mtdna> element, and contains <gene> and <non_coding> elements in any number. It can be optionally present, because for dna files of animals there doesn't exist chloroplasts.
 
-### <gene>
+### \<gene\>
 
 The **<gene> element** represents a **gene**. It contains the sequence of nitrogenous bases of which the gene is composed of. The nitrogenous bases are specified in lower case letters if they are not methylated, and they are specified in upper case letters if they are methylated. It's very important to use lower case letters or upper case letters appropiately, because the methylation of nitrogenous bases can seriously change the behavior of part of the DNA.
 
 Given the fact that, coming from the theory of codons, genes should always start with AUG, any <gene> element that doesn't starts with that sequence should be wrong. In order to support any possible biological case, to start with AUG is not expressly supported.
 
-### <non_coding>
+### \<non_coding\>
 
 The **<non_coding> element** represents a **non-coding region of the DNA**. It usually comprises the majority of nitrogenous bases in any DNA file, because the DNA of life forms usually contains a majority of non-coding regions. It's usually edited in small portions, specifically, in the portions of the transcription factors, to change the level of expression of some specific gene, which usually is the gene that comes next (if the region of the transcription factor is near the end of the non-coding region), or the gene that was previously (if the region of the transcription factor is near the start of the non-coding region).
