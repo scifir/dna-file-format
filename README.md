@@ -77,10 +77,12 @@ The **Scifir Foundation** is looking for **funding**, in order to do some digita
 | -------- | ---------| ----------------------------|
 | \<dna\> | Required, top level | Top-level element to represent dna |
 | \<chromosome\> | Required, any number | Adds a chromosome |
-| \<mtdna\> | Optional | Adds a mitochondrial DNA |
-| \<cpdna\> | Optional | Adds a chloroplasts DNA |
+| \<mtdna\> | Optional, required for animal DNAs | Adds a mitochondrial DNA |
+| \<cpdna\> | Optional, required for plant DNAs | Adds a chloroplasts DNA |
 | \<gene\> | Required, any number | Adds a gene sequence |
 | \<non_coding\> | Required, any number | Adds a non-coding sequence |
+
+It's mandatory to add the <mtdna> element in dna files of animals, and to add the <cpdna> element in dna files of plants.
 
 **info.xml** files have the following elements:
 
@@ -96,7 +98,7 @@ The **Scifir Foundation** is looking for **funding**, in order to do some digita
 
 ### \<dna\>
 
-The **<dna> element** is the top-level element of **dnal** and **dnac files**. It contains all the other elements.
+The **<dna> element** is the top level element of **dnal** and **dnac files**. It contains all the other elements.
 
 ### \<chromosome\>
 
@@ -106,7 +108,7 @@ It has the following attribute:
 
 | Attribute | Required | Description
 | -------- | --------- | ----------------------------|
-| name | Name of the chromosome to identify it from others |
+| name | Required | Name of the chromosome to identify it from others |
 
 ### \<mtdna\>
 
@@ -125,3 +127,45 @@ Given the fact that, coming from the theory of codons, genes should always start
 ### \<non_coding\>
 
 The **<non_coding> element** represents a **non-coding region of the DNA**. It usually comprises the majority of nitrogenous bases in any DNA file, because the DNA of life forms usually contains a majority of non-coding regions. It's usually edited in small portions, specifically, in the portions of the transcription factors, to change the level of expression of some specific gene, which usually is the gene that comes next (if the region of the transcription factor is near the end of the non-coding region), or the gene that was previously (if the region of the transcription factor is near the start of the non-coding region).
+
+### \<info\>
+
+THe **<info> element** is the top level element of the **info.xml file**. It contains all the other elements of info.xml, which is all the metadata associated with the dna.
+
+### \<name\>
+
+The **<name> element** is the name of the life form in real life. It's intended to be used for animals, although if a plant or a microorganism has a name, being a normal name or a scientific name given some set of rules, it can be added for those kingdoms too. For pets and animals you experiment at home or inside an organization, it corresponds to the name you use to designate it.
+
+### \<species\>
+
+The **<species> element** is the species of the life form. It's written always in their scientific name, in binomial name, as for example ""drosophila-melanogaster". Any other nomenclature should be avoided in favor of the binomial name, but is not forbidden, because it can happen that the binomial name is not perfect for some purpose, and then other nomenclatures can be used in rare exception cases.
+
+### \<authors\>
+
+The **<authors> element** lists all the authors of the dna file. It's an author who has sequenced the dna file with a dna sequencer or a person that has created a new dna file from an existing one, by editing it with any program, and has created then a new dna file.
+
+All the authors are listed one following the other, separated by comma. The nomenclature for writing the names of scientists is to write name in the original language, with the letters used on it. In parenthesis the name in latin letters is written if the name in the original language doesn't use latin letters. Following that, after a comma, it's written the national identification number of the scientist (which is one or another depending on his country), and after that an identifier of scientist or researchers of any kind, like ORCID, can be added. There can be any number of identifiers added in this way.
+
+An example of authors element is the following:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<authors>Ismael Correa Castro (RUT 17.705.429-1,ORCID 0009-0007-3815-7053)</authors>
+```
+
+Apart from ORCID, any other identifier of this same type can be added, as long as the name of it is written too, in order to know which system is.
+
+### \<date\>
+
+The **<date> element** specifies the day of the creation of the dna file. Only the day is specified, not the hour, because the intention is not to have statistics of creations of dna files, that can be another different software if that's needed inside a laboratory, but instead is to know the day for any purpose. It can be useful, for example, to remember when has an specific project started.
+
+### \<description\>
+
+The **<description element** describes the life form. A description has to be has objective as possible, and can be any needed description, with everything that needs to be explained. Everything useful to explain, everything that's curious, any anomaly, and every other important event related to the life form or to the dna itself, should be explained here.
+
+### \<organization\>
+
+The **<organization> element** is the name of the organization the scientist were working for when they created the dna file. If they worked independently, the attribute independent="true" is used instead of the name.
+
+| Attribute | Required | Description
+| -------- | --------- | ----------------------------|
+| independent | Optional | It's set to true if there's no organization and the scientists have worked independently |
