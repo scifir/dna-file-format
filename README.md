@@ -1,8 +1,11 @@
 # DNA file format
+**Version:** 1.0.0-beta
+**Author:** [Ismael Correa Castro](https://iarfen.github.io) (ORCID 0009-0007-3815-7053)
+**Last updated:** 2023-07-31
 
 **DNA** is a **file format** that describes DNA. It can be used to store information about the DNA of any natural organisms, it can be any animal, plant, fungi or microorganism that exist in the planet Earth. Also, it allows to use extraterrestrial nitrogenous bases in order to describe extraterretrial organisms if any scientist in the world finds one in the universe. Additional to that, it can describe any fantasy organism by accepting any custom nitrogenous base needed for that purpose. Thinking like that, any DNA of a fantasy animal or fantasy plant can be described with this file format.
 
-The DNA file format is based on XML and uses the **extension .dna**. It's part of the Scifir Collection, a collection of technologies, between libraries and file formats, that allows scientists to create scientific software and scientific machines. You can see more technologies of the Scifir Collection in the GitHub page of [Scifir](https://github.com/scifir/).
+The DNA file format is based on XML and uses the **extension .dna**. It's part of the Scifir Collection, a collection of technologies, between libraries and file formats, that allows scientists to create scientific software and scientific machines. You can see more technologies of the Scifir Collection in the GitHub page of [Scifir](https://github.com/scifir).
 
 A **dna file** is an **archive file** containing the following files:
 - **sequence.dnal** or **sequence.dnac** file: It contains all the DNA sequence. The dnal files is a lighter file format than the dnac file format.
@@ -63,11 +66,11 @@ The checksum file **sequence.sha256** and the checksum file **info.sha256** corr
 
 ### Author
 
-The DNA file format has been created by [Ismael Correa Castro](https://github.com/Iarfen/), an industrial civil engineer and scientist of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at ismael.correa.castro@gmail.com. His ORCID is 0009-0007-3815-7053, if you want to reference this work inside any publication.
+The DNA file format has been created by [Ismael Correa Castro](https://iarfen.github.io), an industrial civil engineer and scientist of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at ismael.correa.castro@gmail.com. His ORCID is 0009-0007-3815-7053, if you want to reference this work inside any publication.
 
 ### Funding
 
-The **Scifir Foundation** is looking for **funding**, in order to do some digital marketing and pay some other needs of his projects. If you want to support his technologies, and **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/Iarfen).
+The **Scifir Foundation** is looking for **funding**, in order to do some digital marketing and pay some other needs of his projects. If you want to support his technologies, and **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/iarfen).
 
 ## XML elements
 
@@ -95,6 +98,7 @@ It's mandatory to add the <mtdna> element in dna files of animals, and to add th
 | \<date\> | Required | Date of creation of the file |
 | \<description\> | Optional | Any relevant description of the life form |
 | \<organization\> | Required | Organization the authors were working for |
+| \<data\> | Optional, any number | Any additional data |
 
 ### \<dna\>
 
